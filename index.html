@@ -113,12 +113,14 @@
         function updateSpanText(id, depositAmount) {
             const amountInText = document.getElementById(id).innerText;
             const amountInNumber = parseFloat(amountInText);
-            const totalAmount = amountInNumber + depositAmount;
-            document.getElementById(id).innerText = totalAmount;
+            if (depositAmount < 0) {
+                alert("Deposit cannot be negative")
+            } else {
+                const totalAmount = amountInNumber + depositAmount;
+                document.getElementById(id).innerText = totalAmount;
+            }
+
         }
-
-
-
     </script>
 </body>
 
